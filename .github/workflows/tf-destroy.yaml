@@ -1,0 +1,28 @@
+name: 'Terraform destroy'
+
+on:
+  workflow_dispatch:
+    
+
+jobs:
+  
+
+  destroy:
+    name: 'Terraform Destroy'
+    runs-on: ubuntu-latest
+    environment: approval-required # Add environment with required approval
+
+    steps:
+      # Checkout the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      # Destroy Terraform
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
