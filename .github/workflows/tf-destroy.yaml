@@ -8,12 +8,9 @@ permissions:
   contents: read
 
 jobs:
-  
-
   destroy:
     name: 'Terraform Destroy'
     runs-on: ubuntu-latest
-    environment: approval-required # Add environment with required approval
 
     steps:
       # Checkout the repository
