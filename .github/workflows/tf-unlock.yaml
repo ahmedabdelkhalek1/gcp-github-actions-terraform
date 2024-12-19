@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   destroy:
-    name: 'Terraform Destroy'
+    name: 'Terraform Unlock'
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +35,10 @@ jobs:
       # Terraform Cleanup
       - name: Terraform Cleanup
         run: rm -rf .terraform
-
-        # Unlock Terraform
+        # Setup Terraform
+        # Setup Terraform
+      - name: init Terraform
+        run: terraform init
+        
       - name: Unlock Terraform
         run: terraform force-unlock -force '${{ inputs.TF_LOCK_ID }}'
