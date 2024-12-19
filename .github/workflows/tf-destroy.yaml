@@ -3,6 +3,9 @@ name: 'Terraform destroy'
 on:
   workflow_dispatch:
     
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   
@@ -20,14 +23,20 @@ jobs:
       # Setup Terraform
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-      # Setup Terraform
+      
+      - uses: 'google-github-actions/auth@v2'
+        with:
+          project_id: 'friendly-brand-441407-b4'
+          workload_identity_provider: 'projects/475047423340/locations/global/workloadIdentityPools/terrafom-pool-id'
+
+        # Setup Terraform
       - name: init Terraform
         run: terraform init 
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        # env:
+        #   GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       # Destroy Terraform
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        # env:
+        #   GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
