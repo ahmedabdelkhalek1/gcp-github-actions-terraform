@@ -22,7 +22,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
       # Setup Terraform
       - name: init Terraform
-        uses: terraform init -auto-approve
+        run: terraform init -auto-approve
 
       # Destroy Terraform
       - name: Terraform Destroy
