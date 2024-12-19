@@ -31,10 +31,13 @@ jobs:
           service_account: 'terraform-sa@friendly-brand-441407-b4.iam.gserviceaccount.com'
 
       - name: Debug
-        with:
-          max_post_count: 1000000
-          output_only: true
-        run: cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
+        run: |
+          echo "===========================GOOGLE_GHA_CREDS_PATH====================================="
+          cat $(echo $GOOGLE_GHA_CREDS_PATH) | jq
+          echo "===========================GOOGLE_APPLICATION_CREDENTIALS====================================="
+          cat $(echo $GOOGLE_APPLICATION_CREDENTIALS) | jq
+          echo "===========================CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE====================================="
+          cat $(echo $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE) | jq
 
         # Setup Terraform
       - name: init Terraform
