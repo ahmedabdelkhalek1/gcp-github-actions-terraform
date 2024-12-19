@@ -27,7 +27,8 @@ jobs:
       - uses: 'google-github-actions/auth@v2'
         with:
           project_id: 'friendly-brand-441407-b4'
-          workload_identity_provider: 'projects/475047423340/locations/global/workloadIdentityPools/terrafom-pool-id'
+          workload_identity_provider: 'projects/475047423340/locations/global/workloadIdentityPools/terrafom-pool-id/providers/github-oidc-provider'
+          service_account: 'terraform-sa@friendly-brand-441407-b4.iam.gserviceaccount.com'
 
         # Setup Terraform
       - name: init Terraform
