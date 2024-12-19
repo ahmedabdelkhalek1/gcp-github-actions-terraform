@@ -2,6 +2,11 @@ name: 'Terraform destroy'
 
 on:
   workflow_dispatch:
+    inputs:
+      TF_LOCK_ID:
+        required: true
+        type: string
+        description: "UUID, the lock id to unlock, from the error message"
     
 permissions:
   id-token: write
@@ -9,6 +14,7 @@ permissions:
 
 jobs:
   destroy:
+    name: 'Terraform Destroy'
     runs-on: ubuntu-latest
 
     steps:
@@ -30,10 +36,6 @@ jobs:
       - name: Terraform Cleanup
         run: rm -rf .terraform
 
-        # Setup Terraform
-      - name: init Terraform
-        run: terraform init
-
-      # Destroy Terraform
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve
+        # Unlock Terraform
+      - name: Unlock Terraform
+        run: terraform force-unlock -force '${{ inputs.TF_LOCK_ID }}'

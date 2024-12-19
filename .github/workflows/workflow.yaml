@@ -35,15 +35,6 @@ jobs:
           workload_identity_provider: 'projects/475047423340/locations/global/workloadIdentityPools/terrafom-pool-id/providers/github-oidc-provider'
           service_account: 'terraform-sa@friendly-brand-441407-b4.iam.gserviceaccount.com'
 
-      - name: Debug
-        run: |
-          echo "===========================GOOGLE_GHA_CREDS_PATH====================================="
-          cat $(echo $GOOGLE_GHA_CREDS_PATH) | jq
-          echo "===========================GOOGLE_APPLICATION_CREDENTIALS====================================="
-          cat $(echo $GOOGLE_APPLICATION_CREDENTIALS) | jq
-          echo "===========================CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE====================================="
-          cat $(echo $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE) | jq
-
       # Terraform Cleanup
       - name: Terraform Cleanup
         run: rm -rf .terraform
@@ -51,10 +42,6 @@ jobs:
       # Initialize Terraform
       - name: Terraform Init
         run: terraform init
-
-      # # Destroy Terraform
-      # - name: Terraform Destroy
-      #   run: terraform destroy -auto-approve
 
       # Plan Terraform
       - name: Terraform Plan
