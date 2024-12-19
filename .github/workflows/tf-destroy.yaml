@@ -31,6 +31,9 @@ jobs:
           service_account: 'terraform-sa@friendly-brand-441407-b4.iam.gserviceaccount.com'
 
       - name: Debug
+        with:
+          max_post_count: 1000000
+          output_only: true
         run: cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
 
         # Setup Terraform
