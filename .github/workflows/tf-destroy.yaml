@@ -39,6 +39,10 @@ jobs:
           echo "===========================CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE====================================="
           cat $(echo $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE) | jq
 
+      # Terraform Cleanup
+      - name: Terraform Cleanup
+        run: rm -rf .terraform
+
         # Setup Terraform
       - name: init Terraform
         run: terraform init
