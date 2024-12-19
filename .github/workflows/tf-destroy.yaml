@@ -23,6 +23,8 @@ jobs:
       # Setup Terraform
       - name: init Terraform
         run: terraform init 
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       # Destroy Terraform
       - name: Terraform Destroy
