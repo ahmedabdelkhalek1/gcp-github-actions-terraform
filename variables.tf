@@ -25,4 +25,4 @@ variable "vm_config" {
   type = list(string)
 }
    
- }
+ 
