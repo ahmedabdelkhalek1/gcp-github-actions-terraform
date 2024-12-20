@@ -6,7 +6,7 @@ vpc_auto_create_subnets = false
 vpc_mtu = 1460
 
 vm_config = {
-    vm_name = "flask-app-1"
+    vm_name = "flask-app-2"
     vm_type = "f1-micro"
     boot_disk_size = 10
     vm_image = "debian-cloud/debian-11"
