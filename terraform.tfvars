@@ -6,9 +6,7 @@ vm_config = {
     vm_type = "f1-micro"
     vm_image = "debian-cloud/debian-11"
     vm_startup_script = "sudo apt-get install -yq build-essential python3-pip rsync;pip install flask"
-
+    vm_tags = ["ssh",
+            "http-server",
+            "flask"]
 }
-
-vm_tags = ["ssh",
-           "http-server",
-           "flask"]
