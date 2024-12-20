@@ -1,11 +1,12 @@
 resource "google_compute_instance" "vm_instance" {
-  name         = "example-vm-test-terraform"
-  machine_type = "f1-micro"
-  zone         = "us-central1-a"
+  name         = var.vm_config.vm_name
+  machine_type = var.vm_config.vm_type
+  zone         = var.zone
+  tags         = var.vm_tags
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = var.vm_config.vm_image
     }
   }
   network_interface {
