@@ -75,7 +75,5 @@ resource "google_monitoring_notification_channel" "proj_net_hub_prod_0_notificat
     email_address = "USER@EXAMPLE.COM" # CHANGE THIS
   }
 
-  depends_on = [
-    proj_net_hub_prod_0
-  ]
+
 }

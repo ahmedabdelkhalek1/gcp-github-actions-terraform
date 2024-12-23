@@ -26,7 +26,7 @@ resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   display_name    = "budget-proj-infr-bapp1-prod-0"
 
   budget_filter {
-    projects = ["projects/${proj_infra_bapp1_prod_0.number}"]
+    projects = "proj_infra_bapp1_prod_0"
   }
 
   amount {
