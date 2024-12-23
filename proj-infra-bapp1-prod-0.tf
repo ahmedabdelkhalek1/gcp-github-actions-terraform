@@ -2,7 +2,6 @@
 resource "google_project" "proj_infra_bapp1_prod_0" {
   name            = "proj-infr-bapp1-prod-0" # CHANGE THIS
   project_id      = "proj-infra-bapp1-prod-0" # CHANGE THIS
-  billing_account = var.billing_account
 
   
 }
