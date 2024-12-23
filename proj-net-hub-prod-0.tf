@@ -1,7 +1,7 @@
 
 # Enabling the CRM API
 resource "google_project_service" "proj_net_hub_prod_0_crm_service" {
-  project                    = google_project.proj_net_hub_prod_0.id
+  project                    = google_project.proj-net-hub-prod-0-445614
   service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 
@@ -13,7 +13,7 @@ resource "google_project_service" "proj_net_hub_prod_0_crm_service" {
 # Enabling the remaining APIs and services
 resource "google_project_service" "roj_net_hub_prod_0_services" {
   count                      = length(var.roj_net_hub_prod_0_services)
-  project                    = google_project.proj_net_hub_prod_0.id
+  project                    = google_project.proj-net-hub-prod-0-445614
   service                    = var.roj_net_hub_prod_0_services[count.index]
   disable_dependent_services = true
 
