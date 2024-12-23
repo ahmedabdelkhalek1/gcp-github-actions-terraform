@@ -28,6 +28,7 @@ resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   budget_filter {
     projects = "proj_infra_bapp1_prod_0"
   }
+  
 
   amount {
     specified_amount {
