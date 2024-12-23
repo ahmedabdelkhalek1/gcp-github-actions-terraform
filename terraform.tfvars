@@ -18,7 +18,7 @@ vm_config = {
 
 billing_account = "019B2C-16B023-897455"
 
-proj_net_hub_prod_0_services = [
+roj_net_hub_prod_0_services = [
   "compute.googleapis.com",
   "servicenetworking.googleapis.com"
 ]

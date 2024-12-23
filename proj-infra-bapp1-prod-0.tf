@@ -1,7 +1,7 @@
 # Project resource
 resource "google_project" "proj_infra_bapp1_prod_0" {
-  name            = "THE-PROJECT-ID" # CHANGE THIS
-  project_id      = "THE-PROJECT-ID" # CHANGE THIS
+  name            = "proj_infra_bapp1_prod_0" # CHANGE THIS
+  project_id      = "proj_infra_bapp1_prod_0" # CHANGE THIS
   billing_account = var.billing_account
   folder_id       = google_folder.infrastructure.id
 

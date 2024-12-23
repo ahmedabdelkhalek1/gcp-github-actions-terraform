@@ -58,3 +58,8 @@ variable "billing_account" {
   description = "The list of services to enable for the project"
    
  }
+ variable "proj_infra_iam_test_0_services" {
+  type = list(string)
+  description = "The list of services to enable for the project"
+   
+ }
