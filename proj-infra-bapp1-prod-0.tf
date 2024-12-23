@@ -25,7 +25,7 @@ resource "google_project_service" "proj_infra_bapp1_prod_0_services" {
 # Budget alert for the project
 resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   billing_account = var.billing_account
-  display_name    = "budget-${proj_infra_bapp1_prod_0.project_id}"
+  display_name    = "budget-proj-infr-bapp1-prod-0"
 
   budget_filter {
     projects = ["projects/${proj_infra_bapp1_prod_0.number}"]
@@ -64,13 +64,13 @@ resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   }
 
   depends_on = [
-    proj_infra_bapp1_prod_0
+   "proj_infra_bapp1_prod_0"
   ]
 }
 
 # Project notification channels (email)
 resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notification_channel_1" {
-  project      = proj_infra_bapp1_prod_0.project_id
+  project      = "proj_infra_bapp1_prod_0"
   display_name = "USER@EXAMPLE.COM" # CHANGE THIS
   type         = "email"
 
@@ -85,7 +85,7 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
 
 # Project notification channels (email)
 resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notification_channel_2" {
-  project      = proj_infra_bapp1_prod_0.project_id
+  project      = "proj_infra_bapp1_prod_0"
   display_name = "DISPLAY NAME"
   type         = "email"
 

@@ -25,7 +25,7 @@ resource "google_project_service" "roj_net_hub_prod_0_services" {
 # Budget alert for the project
 resource "google_billing_budget" "proj_net_hub_prod_0_budget" {
   billing_account = var.billing_account
-  display_name    = "budget-${proj_net_hub_prod_0.project_id}"
+  display_name    = "budget-proj-net-hub-prod-0-445614"
 
   budget_filter {
     projects = ["projects/${proj_net_hub_prod_0.number}"]
@@ -69,7 +69,7 @@ resource "google_billing_budget" "proj_net_hub_prod_0_budget" {
 
 # Project notification channels (email)
 resource "google_monitoring_notification_channel" "proj_net_hub_prod_0_notification_channel" {
-  project      = proj_net_hub_prod_0.project_id
+  project      = "proj_net_hub_prod_0"
   display_name = "DISPLAY NAME"
   type         = "email"
 
