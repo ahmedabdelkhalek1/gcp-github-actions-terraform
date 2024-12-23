@@ -26,7 +26,7 @@ resource "google_billing_budget" "proj_net_hub_prod_0_budget" {
   display_name    = "budget-proj-net-hub-prod-0-445614"
 
   budget_filter {
-    projects = ["projects/${proj_net_hub_prod_0.number}"]
+    projects = ["proj_net_hub_prod_0"]
   }
 
   amount {
@@ -60,9 +60,7 @@ resource "google_billing_budget" "proj_net_hub_prod_0_budget" {
     disable_default_iam_recipients = true
   }
 
-  depends_on = [
-    proj_net_hub_prod_0
-  ]
+
 }
 
 # Project notification channels (email)
