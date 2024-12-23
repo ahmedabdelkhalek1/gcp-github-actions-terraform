@@ -1,19 +1,19 @@
 
 # Enabling the CRM API
 resource "google_project_service" "proj_infra_bapp1_prod_0_crm_service" {
-  project                    = google_project.proj-infr-bapp1-prod-0
+  project                    = proj-infr-bapp1-prod-0
   service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 
   depends_on = [
-    google_project.proj_infra_bapp1_prod_0
+    proj_infra_bapp1_prod_0
   ]
 }
 
 # Enabling the remaining APIs and services
 resource "google_project_service" "proj_infra_bapp1_prod_0_services" {
   count                      = length(var.proj_infra_bapp1_prod_0_services)
-  project                    = google_project.proj-infr-bapp1-prod-0
+  project                    = proj-infr-bapp1-prod-0
   service                    = var.proj_infra_bapp1_prod_0_services[count.index]
   disable_dependent_services = true
 
@@ -25,10 +25,10 @@ resource "google_project_service" "proj_infra_bapp1_prod_0_services" {
 # Budget alert for the project
 resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   billing_account = var.billing_account
-  display_name    = "budget-${google_project.proj_infra_bapp1_prod_0.project_id}"
+  display_name    = "budget-${proj_infra_bapp1_prod_0.project_id}"
 
   budget_filter {
-    projects = ["projects/${google_project.proj_infra_bapp1_prod_0.number}"]
+    projects = ["projects/${proj_infra_bapp1_prod_0.number}"]
   }
 
   amount {
@@ -64,13 +64,13 @@ resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   }
 
   depends_on = [
-    google_project.proj_infra_bapp1_prod_0
+    proj_infra_bapp1_prod_0
   ]
 }
 
 # Project notification channels (email)
 resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notification_channel_1" {
-  project      = google_project.proj_infra_bapp1_prod_0.project_id
+  project      = proj_infra_bapp1_prod_0.project_id
   display_name = "USER@EXAMPLE.COM" # CHANGE THIS
   type         = "email"
 
@@ -79,13 +79,13 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
   }
 
   depends_on = [
-    google_project.proj_infra_bapp1_prod_0
+    proj_infra_bapp1_prod_0
   ]
 }
 
 # Project notification channels (email)
 resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notification_channel_2" {
-  project      = google_project.proj_infra_bapp1_prod_0.project_id
+  project      = proj_infra_bapp1_prod_0.project_id
   display_name = "DISPLAY NAME"
   type         = "email"
 
@@ -94,6 +94,6 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
   }
 
   depends_on = [
-    google_project.proj_infra_bapp1_prod_0
+    proj_infra_bapp1_prod_0
   ]
 }
