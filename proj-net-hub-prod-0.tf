@@ -3,11 +3,8 @@ resource "google_project" "proj_net_hub_prod_0" {
   name            = "proj-net-hub-prod-0" # CHANGE THIS
   project_id      = "proj-net-hub-prod-0" # CHANGE THIS
   billing_account = var.billing_account
-  folder_id       = google_folder.network.id
 
-  depends_on = [
-    google_folder.network
-  ]
+ 
 }
 
 # Enabling the CRM API
