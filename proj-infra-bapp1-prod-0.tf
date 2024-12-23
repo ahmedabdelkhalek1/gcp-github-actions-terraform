@@ -5,9 +5,7 @@ resource "google_project_service" "proj_infra_bapp1_prod_0_crm_service" {
   service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 
-  depends_on = [
-    google_project.proj_infra_bapp1_prod_0
-  ]
+
 }
 
 # Enabling the remaining APIs and services
@@ -63,9 +61,7 @@ resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
     disable_default_iam_recipients = true
   }
 
-  depends_on = [
-   google_project.proj_infra_bapp1_prod_0
-  ]
+
 }
 
 # Project notification channels (email)
@@ -78,9 +74,7 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
     email_address = "USER@EXAMPLE.COM" # CHANGE THIS
   }
 
-  depends_on = [
-    google_project.proj_infra_bapp1_prod_0
-  ]
+
 }
 
 # Project notification channels (email)
@@ -93,7 +87,5 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
     email_address = "USER@EXAMPLE.COM" # CHANGE THIS
   }
 
-  depends_on = [
-    google_project.proj_infra_bapp1_prod_0
-  ]
+
 }

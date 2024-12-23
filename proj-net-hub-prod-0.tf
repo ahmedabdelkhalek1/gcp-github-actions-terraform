@@ -5,9 +5,7 @@ resource "google_project_service" "proj_net_hub_prod_0_crm_service" {
   service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 
-  depends_on = [
-    google_project.proj_net_hub_prod_0
-  ]
+
 }
 
 # Enabling the remaining APIs and services
