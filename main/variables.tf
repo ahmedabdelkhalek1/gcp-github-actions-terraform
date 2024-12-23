@@ -23,6 +23,10 @@ variable "vpc_auto_create_subnets" {
 variable "vpc_mtu" {
     type = number
     description = "The value of the MTU for our new VPC"
+    validation {
+      condition     = var.vpc_mtu == 1460 || var.vpc_mtu == 1500
+      error_message = "The 'vpc_mtu' variable must be set to either 1460 or 1500."
+                }
 }
 variable "vm_config" {
   description = "the VM configuration variables "
@@ -37,5 +41,9 @@ variable "vm_config" {
   )
 }
 
+variable "project_id" {
+  type = string
+  description = "this is my project id"
+}
 
  

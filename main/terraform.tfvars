@@ -15,3 +15,5 @@ vm_config = {
             "http-server",
             "flask"]
             }
+
+project_id_in_folder = "projects/475047423340"
