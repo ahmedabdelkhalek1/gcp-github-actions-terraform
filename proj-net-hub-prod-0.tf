@@ -1,10 +1,3 @@
-# Project resource
-resource "google_project" "proj_net_hub_prod_0" {
-  name            = "proj-net-hub-prod-0" # CHANGE THIS
-  project_id      = "proj-net-hub-prod-0" # CHANGE THIS
-
- 
-}
 
 # Enabling the CRM API
 resource "google_project_service" "proj_net_hub_prod_0_crm_service" {
