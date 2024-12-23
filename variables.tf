@@ -41,9 +41,20 @@ variable "vm_config" {
   )
 }
 
-variable "project_in_folder" {
+variable "billing_account" {
   type = string
   description = "this is my project id"
 }
 
  
+ variable "proj_infra_bapp1_prod_0_services" {
+  type = list(string)
+  description = "The list of services to enable for the project"
+   
+ }
+
+ variable "roj_net_hub_prod_0_services" {
+  type = list(string)
+  description = "The list of services to enable for the project"
+   
+ }

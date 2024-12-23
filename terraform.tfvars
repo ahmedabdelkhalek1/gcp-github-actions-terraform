@@ -16,4 +16,25 @@ vm_config = {
             "flask"]
             }
 
-project_in_folder = "projects/475047423340"
+billing_account = "019B2C-16B023-897455"
+
+proj_net_hub_prod_0_services = [
+  "compute.googleapis.com",
+  "servicenetworking.googleapis.com"
+]
+
+proj_infra_bapp1_prod_0_services = [
+  "compute.googleapis.com",
+  "sql-component.googleapis.com",
+  "sqladmin.googleapis.com",
+  "servicenetworking.googleapis.com",
+  "iap.googleapis.com",
+  "secretmanager.googleapis.com"
+]
+
+proj_infra_iam_test_0_services = [
+  "compute.googleapis.com",
+  "sql-component.googleapis.com",
+  "sqladmin.googleapis.com",
+  "servicenetworking.googleapis.com"
+]
