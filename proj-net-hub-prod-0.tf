@@ -1,7 +1,7 @@
 # Project resource
 resource "google_project" "proj_net_hub_prod_0" {
-  name            = "THE-PROJECT-ID" # CHANGE THIS
-  project_id      = "THE-PROJECT-ID" # CHANGE THIS
+  name            = "proj-net-hub-prod-0" # CHANGE THIS
+  project_id      = "proj-net-hub-prod-0" # CHANGE THIS
   billing_account = var.billing_account
   folder_id       = google_folder.network.id
 
