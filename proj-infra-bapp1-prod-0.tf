@@ -6,7 +6,7 @@ resource "google_project_service" "proj_infra_bapp1_prod_0_crm_service" {
   disable_dependent_services = true
 
   depends_on = [
-    proj_infra_bapp1_prod_0
+    google_project.proj_infra_bapp1_prod_0
   ]
 }
 
@@ -64,7 +64,7 @@ resource "google_billing_budget" "proj_infra_bapp1_prod_0_budget" {
   }
 
   depends_on = [
-   "proj_infra_bapp1_prod_0"
+   google_project.proj_infra_bapp1_prod_0
   ]
 }
 
@@ -79,7 +79,7 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
   }
 
   depends_on = [
-    proj_infra_bapp1_prod_0
+    google_project.proj_infra_bapp1_prod_0
   ]
 }
 
@@ -94,6 +94,6 @@ resource "google_monitoring_notification_channel" "proj_infra_bapp1_prod_0_notif
   }
 
   depends_on = [
-    proj_infra_bapp1_prod_0
+    google_project.proj_infra_bapp1_prod_0
   ]
 }

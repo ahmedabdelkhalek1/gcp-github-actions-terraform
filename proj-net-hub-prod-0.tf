@@ -6,7 +6,7 @@ resource "google_project_service" "proj_net_hub_prod_0_crm_service" {
   disable_dependent_services = true
 
   depends_on = [
-    proj_net_hub_prod_0
+    google_project.proj_net_hub_prod_0
   ]
 }
 
