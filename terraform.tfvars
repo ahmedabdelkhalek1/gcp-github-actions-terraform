@@ -16,4 +16,4 @@ vm_config = {
             "flask"]
             }
 
-project_id_in_folder = "projects/475047423340"
+project_in_folder = "projects/475047423340"

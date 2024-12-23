@@ -41,7 +41,7 @@ variable "vm_config" {
   )
 }
 
-variable "project_id" {
+variable "project_in_folder" {
   type = string
   description = "this is my project id"
 }
