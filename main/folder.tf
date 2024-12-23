@@ -1,7 +1,7 @@
 #folder "my GCP ENV"
 resource "google_folder" "my_gcp_env_root" {
     display_name = "My GCP Env"
-    parent = var.project_id_in_folder
+    parent = "projects/475047423340"
   
 }
 # folder "Network"
